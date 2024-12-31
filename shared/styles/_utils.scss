@@ -1,10 +1,5 @@
 @use 'helpers/index' as *;
 
-.container {
-  max-width: var(--container-width);
-  margin-inline: auto;
-}
-
 .hidden-mobile {
   @include mobile {
     display: none !important;
