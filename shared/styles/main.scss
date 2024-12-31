@@ -1,12 +1,81 @@
 @use 'normalize';
-@use 'fonts';
 @use 'variables';
 @use 'utils';
 @use 'globals';
 
+@use 'helpers/index' as *;
+
 .map {
     display: flex;
+    position: relative;
     margin: 0 auto;
     height: 100vh;
     width: 50vh;
+}
+
+.section-top {
+    position: absolute;
+    top: rem(40);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        background-color: var(--color-gray-50);
+        border-radius: rem(20);
+        padding: rem(5);
+
+        svg {
+            fill: none;
+            stroke: yellow;
+        }
+
+        span {
+            color: yellow;
+            margin-left: rem(15);
+            font-size: rem(40);
+            text-align: center;
+            font-family: var(--font-montserrat), sans-serif;
+        }
+    }
+}
+
+.section {
+    position: absolute;
+    bottom: rem(100);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: white;
+    padding: rem(10);
+    border-radius: rem(8);
+    box-shadow: 0 rem(2) rem(4) rgba(0, 0, 0, 0.2);
+
+    input {
+        width: rem(300);
+        padding: rem(8);
+        border: rem(1) solid #ccc;
+        border-radius: rem(4);
+        outline: none;
+    }
+
+    .suggestions-list {
+        list-style: none;
+        padding: 0;
+        margin: rem(10) 0;
+
+        li {
+            padding: rem(10);
+            cursor: pointer;
+            background: #f9f9f9;
+            border-bottom: rem(1) solid #ddd;
+
+            .subtitle {
+                font-size: rem(12);
+                color: gray;
+            }
+        }
+    }
 }
